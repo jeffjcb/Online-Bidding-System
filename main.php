@@ -42,12 +42,13 @@ $cid = isset($_GET['category_id'])? $_GET['category_id']:0; ?>
                                     $cat = $conn->query("SELECT * FROM products where unix_timestamp(bid_end_datetime) >= ".strtotime(date("Y-m-d H:i"))." $where order by name asc");
                                 }
                                 else{
-                                    $cat = $conn->query("SELECT * FROM products");
+                                    $cat = $conn->query("SELECT * FROM products where unix_timestamp(bid_end_datetime) >= ".strtotime(date("Y-m-d H:i")));
                                 }
                                 
                                 //  if 0 Dont display anything
                                 if($cat->num_rows <= 0){
                                     echo "<center><h4><i>Oops. There seems to be no products available yet.</i></h4></center>";
+                                    ?><div class="col-md-6"><img src="img/nothing.svg" alt=""></div><?php
                                 } 
                                 while($result=$cat->fetch_assoc()):
                              ?>
