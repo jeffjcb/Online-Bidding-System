@@ -52,7 +52,7 @@ $cid = isset($_GET['category_id'])? $_GET['category_id']:0; ?>
                                 } 
                                 while($result=$cat->fetch_assoc()):
                              ?>
-                            <div class="col-sm-3">
+                            <div class="col-sm-3 mb-4">
                                 <div class="card">
                                      <!-- Image in card -->
                                     <div class="image " style="height:260px; overflow: hidden;" >
@@ -115,17 +115,13 @@ $cid = isset($_GET['category_id'])? $_GET['category_id']:0; ?>
     <p>Current Highest Bid: <b></b></p>
     <p>Description: <b></b></p>
       <div class="col-md-12 text-center">
-		<button class="btn btn-warning btn-block btn-sm px-5 py-2" type="button" id="bid">Bid</button>
+		<button class="btn btn-warning btn-block btn-sm px-5 py-2 bidbut" type="button" id="bid">Bid</button>
 	</div>
-      </div>
-      <!-- show footer when user is only logged in -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary close">Cancel</button>
-        <button type="button" class="btn btn-primary">Submit</button>
       </div>
     </div>
   </div>
 </div>
+
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -133,6 +129,10 @@ $cid = isset($_GET['category_id'])? $_GET['category_id']:0; ?>
 <?php include('footer.php');?>
 
 <script>
+
+
+
+
 // ACTIVE CLASS
 $('#cat-list li').click(function(){
     location.href=$(this).attr('data-href')
