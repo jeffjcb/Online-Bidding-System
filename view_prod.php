@@ -17,8 +17,10 @@
     <p>
       <h3 class="text-center bg-light p-3"><b><?php echo $row['name']; ?></b></h3>
     </p>
-    <p>Category: <b><?php echo $row['category_id']; ?></b></p>
+    <p>Product Id: <b><?php echo $row['id']; ?></b></p>
+    <input type="hidden" name="prod_id" value=" <?php echo $row['id']; ?>">
     <p>Starting Amount: <b>Php <?php echo number_format($row['start_bid'],2); ?></b></p>
+    <input type="hidden" name="startbid" value=" <?php echo $row['start_bid']; ?>">
     <p>Bidding Ends at: <b><?php echo date("M d,Y h:i A",strtotime($row['bid_end_datetime'])) ?></b></p>
     <p>Current Highest Bid: <b>Php <?php echo number_format($row['start_bid'],2); ?></b></p>
     <p>Description: <b><?php echo $row['description'] ?></b></p>
