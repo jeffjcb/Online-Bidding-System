@@ -3,6 +3,7 @@ include('header.php');
 include('admin/db_connect.php');
 $cid = isset($_GET['category_id'])? $_GET['category_id']:0; ?>
 
+
 <!-- Categories -->
 <div class="container-fluid my-5">
     <div class="col-lg-12">
@@ -33,6 +34,30 @@ $cid = isset($_GET['category_id'])? $_GET['category_id']:0; ?>
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
+                            <!-- error 1 -->
+                        <?php if(isset($_SESSION['error_message1'])){ if($_SESSION['error_message1']==true){?>
+                        <div class="alert alert-danger a1" role="alert">
+                        Bid should be<b> greater than starting bid</b>.
+                        </div>
+                        <?php $_SESSION['error_message1']=false;}}?>
+                            <!-- error 2 -->
+                        <?php if(isset($_SESSION['error_message2'])){ if($_SESSION['error_message2']==true){?>
+                        <div class="alert alert-danger a2" role="alert">
+                        Bid should be<b> greater than current highest bid</b>.
+                        </div>
+                        <?php $_SESSION['error_message2']=false;}}?>
+                        <!-- success 1 -->
+                        <?php if(isset($_SESSION['success_message1'])){ if($_SESSION['success_message1']==true){?>
+                        <div class="alert alert-success a3" role="alert">
+                        Bid Updated Successfully.
+                        </div>
+                        <?php $_SESSION['success_message1']=false;}}?>
+                        <!-- success 2 -->
+                        <?php if(isset($_SESSION['success_message2'])){ if($_SESSION['success_message2']==true){?>
+                        <div class="alert alert-success a4" role="alert">
+                        Bid Created Successfully.
+                        </div>
+                        <?php $_SESSION['success_message2']=false;}}?>
                         <?php
                                 $where = "";
                                 // checks if category_id is 0 or not,
@@ -151,6 +176,10 @@ $(".close").click(function(){
 
 $('.n2').addClass('active');
 
+$('.a1').delay(5000).hide(0);
+$('.a2').delay(5000).hide(0);
+$('.a3').delay(5000).hide(0);
+$('.a4').delay(5000).hide(0);
 </script>
 </body>
 </html>

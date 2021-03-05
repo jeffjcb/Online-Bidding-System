@@ -19,6 +19,7 @@ if(isset($rw['username'], $rw['password'])){
     // check if the username in db is same as the posted data
     if($rw['username']==$username && $rw['password']==$password){
         $_SESSION['username']= $username;
+        $_SESSION['u_id']= $rw['id'];
         $_SESSION['loggedin']=true;
 
         header('Location:main.php');
