@@ -8,7 +8,7 @@
                     <div class="col-md-6 ml-auto mr-auto text-center">
                       <h4 class="card-title">
                         Hello Admin! Welcome to the Admin Panel!
-                        <p class="category">Today's Date: </p>
+                        <p class="category">Today's Date: <?php echo "<b>(". date("l").")  ".date("M-d-Y"); ?></p>
                       </h4>
                     </div>
                   </div>
@@ -16,4 +16,5 @@
                     </div>
                   </div>
                 </div>
-<?php include('footadmin.php'); ?>
+
+<?php include('footadmin.php'); ?>   

@@ -22,7 +22,20 @@
     <p>Starting Amount: <b>Php <?php echo number_format($row['start_bid'],2); ?></b></p>
     <input type="hidden" name="startbid" value=" <?php echo $row['start_bid']; ?>">
     <p>Bidding Ends at: <b><?php echo date("M d,Y h:i A",strtotime($row['bid_end_datetime'])) ?></b></p>
-    <p>Current Highest Bid: <b>Php <?php echo number_format($row['start_bid'],2); ?></b></p>
+
+<?php 
+      $sql2 = "SELECT * FROM bids where product_id=$pid LIMIT 1";
+      $result2 = mysqli_query($conn, $sql2);
+      if(mysqli_num_rows($result2)>0){
+        $row2 = mysqli_fetch_assoc($result2);
+?>
+    <p>Current Highest Bid: <b>Php <?php echo number_format($row2['bid_amount'],2);?></b></p>
+    <?php
+    }else{?>
+<p>Current Highest Bid: <b>Php <?php echo number_format($row['start_bid'],2); ?></b></p>
+<?php
+    }
+    ?>
     <p>Description: <b><?php echo $row['description'] ?></b></p>
     <div class="col-md-12 text-center">
 

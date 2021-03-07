@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(isset($_SESSION['adminname'])){
+}else{
+  header('Location:adminlogin.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,32 +43,32 @@
         </div>
         <ul class="nav">
           <li>
-            <a href="./home.php">
+            <a href="./home.php" class="n1">
               <i class="tim-icons icon-mobile"></i>
               <p>Home</p>
             </a>
           </li>
           <li>
-            <a href="./categories.php">
+            <a href="./categories.php" class="n2">
               <i class="tim-icons icon-tag"></i>
               <p>Categories</p>
             </a>
           </li>
           <li>
-            <a href="./products.php">
+            <a href="./products.php" class="n3">
               <i class="tim-icons icon-align-center"></i>
               <p>Products</p>
             </a>
           </li>
           <!--add class="active" -->
           <li >
-            <a href="./bids.php">
+            <a href="./bids.php" class="n4">
               <i class="tim-icons icon-money-coins"></i>
               <p>Bids</p>
             </a>
           </li>
           <li>
-            <a href="./users.php">
+            <a href="./users.php" class="n5">
               <i class="tim-icons icon-single-02"></i>
               <p>Users</p>
             </a>
@@ -71,6 +79,9 @@
     <div class="main-panel">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent   ">
+ <div class="mt-2">
+            <img src="../img/logoblack.png" alt="">
+          </div>
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <div class="navbar-toggle d-inline">
@@ -81,21 +92,23 @@
               </button>
             </div>
 
-
-
-            <a class="navbar-brand" href="#pablo">BIDS</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
             <span class="navbar-toggler-bar navbar-kebab"></span>
             <span class="navbar-toggler-bar navbar-kebab"></span>
           </button>
+
+
           <div class="collapse navbar-collapse" id="navigation">
             <ul class="navbar-nav ml-auto ">
               <div class="search-bar input-group">
+                <li class="nav-item">
+         <h4 class="mt-2"> Welcome back! <b> <?php echo $_SESSION['adminname']; ?></b></h4> 
+                </li>
               <li class="dropdown nav-item">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                  <div class="photo">
+                <div class="photo">
                     <img src="node_modules/black-dashboard/assets/img/anime3.png">
                   </div>
                   <b class="caret d-none d-lg-block d-xl-block"></b>
@@ -105,15 +118,11 @@
                 </a>
                 <ul class="dropdown-menu dropdown-navbar">
                   <li class="nav-link">
-                    <a href="#" class="nav-item dropdown-item">Profile</a>
-                  </li>
-                  <div class="dropdown-divider"></div>
-                  <li class="nav-link">
-                    <a href="#" class="nav-item dropdown-item">Log out</a>
+                    <a href="adminlogin.php" class="nav-item dropdown-item">Log out</a>
                   </li>
                 </ul>
               </li>
-              <li class="separator d-lg-none"></li>
+
             </ul>
           </div>
         </div>
