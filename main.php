@@ -1,4 +1,4 @@
-<?php 
+<?php
 include('header.php');
 include('admin/db_connect.php');
 $cid = isset($_GET['category_id'])? $_GET['category_id']:0; ?>
@@ -7,7 +7,7 @@ $cid = isset($_GET['category_id'])? $_GET['category_id']:0; ?>
 <!-- Categories -->
 <div class="container-fluid my-5">
     <div class="col-lg-12">
-        <div class="row" > 
+        <div class="row" >
             <div class="col-md-3">
                 <div class="card  text-center">
                     <div class="card-header"><h4>Categories</h4> </div>
@@ -69,22 +69,22 @@ $cid = isset($_GET['category_id'])? $_GET['category_id']:0; ?>
                                 else{
                                     $cat = $conn->query("SELECT * FROM products where unix_timestamp(bid_end_datetime) >= ".strtotime(date("Y-m-d H:i")));
                                 }
-                                
+
                                 //  if 0 Dont display anything
                                 if($cat->num_rows <= 0){
                                     echo "<center><h4><i>Oops. There seems to be no products available yet.</i></h4></center>";
                                     ?><div class="col-md-6"><img src="img/nothing.svg" alt=""></div><?php
-                                } 
+                                }
                                 while($result=$cat->fetch_assoc()):
                              ?>
                             <div class="col-sm-3 mb-4">
                                 <div class="card">
                                      <!-- Image in card -->
-                                    <div class="image " style="height:260px; overflow: hidden;" >
-                                        <a href="img/manok.jpg" data-fancybox><img class="card-img-top img-fluid" src="img/manok.jpg" alt="" ></a>
+                                    <div class="image img-thumbnail card-img text-center" style="max-height:260px;min-height:260px; overflow: hidden;" >
+                                        <a href="img/<?php echo $result['img_fname'] ?>" data-fancybox><img class="card-img-top img-fluid text-center" style="max-height:260px;min-height:260px;" src="img/<?php echo $result['img_fname'] ?>" alt="" ></a>
                                     </div>
                                     <!-- Small Tag for date -->
-                                    <h5 class="card-header bg-light text-left mb-0"><?php echo $result['name'] ?></h5>
+                                    <h5 class="card-header bg-light text-left mb-0 text-center" style="max-height:70px;min-height:70px; overflow: auto;"><?php echo $result['name'] ?></h5>
                                     <div class="card-body">
                                     <div class="float-right align-top d-flex "><span class="badge bg-dark text-light ">Until: <?php echo date("M d,Y h:i A",strtotime($result['bid_end_datetime'])) ?></span></div>
                                     <span class="badge badge-info bg-dark text-light">Starting Bid Price: Php<?php echo number_format($result['start_bid'],2) ?></span>
@@ -100,7 +100,7 @@ $cid = isset($_GET['category_id'])? $_GET['category_id']:0; ?>
                         $(document).ready(function(){
                         $('#<?php echo $result['id']?>').click(function(){
                             var vid = $('#<?php echo $result['id']?>').attr('data-id');
-                            console.log(vid);  
+                            console.log(vid);
                             $(".texts").load('view_prod.php', {
                                 pid:vid
                             });
@@ -109,7 +109,7 @@ $cid = isset($_GET['category_id'])? $_GET['category_id']:0; ?>
                         });
                             </script>
                             <?php endwhile; ?>
-                                
+
                         </div>
                     </div>
                 </div>
@@ -148,7 +148,9 @@ $cid = isset($_GET['category_id'])? $_GET['category_id']:0; ?>
 </div>
 
 
-
+<div class="row mb-5"></div>
+    <div class="row mb-5"></div>
+    <div class="row mb-4"></div>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <?php include('footer.php');?>

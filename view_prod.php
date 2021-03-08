@@ -12,7 +12,7 @@
 <div class="modal-body texts">
   <form action="check_bid.php" method='POST' onsubmit="return confirm('Do you really want to submit the bid?');">
     <div class="image  mb-3" style="height:260px; overflow: hidden;">
-      <img class="card-img-top img-fluid" src="img/elsa.jpg" alt="">
+      <img class="card-img-top img-fluid" src="img/<?php echo $row['img_fname']; ?>" alt="">
     </div>
     <p>
       <h3 class="text-center bg-light p-3"><b><?php echo $row['name']; ?></b></h3>

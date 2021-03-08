@@ -37,7 +37,7 @@ unset($_SESSION['username']);
         <li class="nav-item pe-3"><a class="nav-link active" aria-current="page">S.T. <strong id="txt"></strong></a></li>
         <li class="nav-item pe-3"><a class="nav-link n1" aria-current="page" href="index.php">Home</a></li>
         <li class="nav-item pe-3"><a class="nav-link n2" href="main.php">Bid</a></li>
-        <li class="nav-item pe-3"><a class="nav-link n3" href="#">About</a></li>
+        <li class="nav-item pe-3"><a class="nav-link n3" href="aboutus.php">About</a></li>
         <li class="nav-item pe-3"><a class="nav-link n4" href="login.php">Login</a></li>
         <li class="nav-item pe-3"><a class="nav-link n5" href="signup.php">Signup</a></li>
     </ul>

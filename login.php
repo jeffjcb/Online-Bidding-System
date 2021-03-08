@@ -38,7 +38,7 @@ session_destroy();
     <li class="nav-item pe-3"><a class="nav-link active" aria-current="page">S.T. <strong id="txt"></strong></a></li>
         <li class="nav-item pe-3"><a class="nav-link n1" aria-current="page" href="index.php">Home</a></li>
         <li class="nav-item pe-3"><a class="nav-link n2" href="main.php">Bid</a></li>
-        <li class="nav-item pe-3"><a class="nav-link n3" href="#">About</a></li>
+        <li class="nav-item pe-3"><a class="nav-link n3" href="aboutus.php">About</a></li>
         <li class="nav-item pe-3"><a class="nav-link n4" href="login.php">Login</a></li>
         <li class="nav-item pe-3"><a class="nav-link n5" href="signup.php">Signup</a></li>
     </ul>
@@ -50,7 +50,7 @@ session_destroy();
   <body onload="startTime()">
   <div class="content mt-5">
     <div class="container">
-    <div class="row mb-5">      <!-- error 1 -->
+    <div class="row mb-3">      <!-- error 1 -->
                         <?php 
                         if(isset($_GET['valid'])){ if($_GET['valid']==true){?>
                         <div class="alert alert-success a1" role="alert">
@@ -107,6 +107,9 @@ session_destroy();
         </div>
       </div>
     </div>
+    <div class="row mb-5"></div>
+    <div class="row mb-5"></div>
+    <div class="row mb-4"></div>
   </div>
 <?php include('footer.php'); ?>
 <script>

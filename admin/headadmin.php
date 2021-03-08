@@ -25,7 +25,7 @@ if(isset($_SESSION['adminname'])){
   <link href="node_modules/black-dashboard/assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="node_modules/black-dashboard/assets/demo/demo.css" rel="stylesheet" />
-
+  <link rel="stylesheet" type="text/css" href="resources/bdatetimepicker/css/bootstrap-datetimepicker.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css">
   
 

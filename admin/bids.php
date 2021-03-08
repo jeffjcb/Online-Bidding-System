@@ -38,7 +38,7 @@ $conn->query("UPDATE bids INNER JOIN products on product_id = products.id SET bi
                         <td><?php echo $row['id'];?></td>
                         <td><?php echo $row3['name'];?></td>
                         <td><?php echo $row2['username'];?></td>
-                        <td><?php echo $row['bid_amount'];?></td>
+                        <td>Php <b><?php echo number_format($row['bid_amount'],2);?></b></td>
                         <?php if($row['status']==1){ ?>
                           <td><span class="badge badge-secondary">Ongoing</span></td>
                         <?php }

@@ -36,7 +36,7 @@ session_start();
     <li class="nav-item pe-3"><a class="nav-link active" aria-current="page">S.T. <strong id="txt"></strong></a></li>
         <li class="nav-item pe-3"><a class="nav-link n1" aria-current="page" href="index.php">Home</a></li>
         <li class="nav-item pe-3"><a class="nav-link n2" href="main.php">Bid</a></li>
-        <li class="nav-item pe-3"><a class="nav-link n3" href="#">About</a></li>
+        <li class="nav-item pe-3"><a class="nav-link n3" href="aboutus.php">About</a></li>
         <?php
         if(isset($_SESSION['username'])){ ?>
         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Welcome <?php echo $_SESSION['username']; ?></a>

@@ -3,7 +3,6 @@
 include('../db_connect.php');
 
 try {
-
     if (isset($_GET['delete'])){
         $delete = $_GET['delete'];
         $sql = "DELETE FROM products WHERE id = $delete";
@@ -17,4 +16,7 @@ try {
   catch(Exception $e) {
     header('Location:../products.php?failure=2');
   }
+
+
+
 ?>
