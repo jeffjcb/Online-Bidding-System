@@ -111,7 +111,7 @@ unset($_SESSION['username']);
                 </div>
                 </div>
               <div class="d-flex mb-4 align-items-center">
-                <input type="checkbox" checked="checked" required/>
+                <input type="checkbox"  required/>
                   <div class="control__indicator"></div>
                 <label class="control control--checkbox mb-0"><span class="caption">&nbsp; I agree to the Terms and Conditions.</span>
 

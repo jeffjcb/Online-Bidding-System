@@ -27,7 +27,7 @@ if(isset($_SESSION['adminname'])){
   <link href="node_modules/black-dashboard/assets/demo/demo.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="resources/bdatetimepicker/css/bootstrap-datetimepicker.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css">
-  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   
 
@@ -78,9 +78,9 @@ if(isset($_SESSION['adminname'])){
     </div>
     <div class="main-panel">
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent   ">
- <div class="mt-2">
-            <img src="../img/logoblack.png" alt="">
+      <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
+ <div class="" >
+            <img class="mt-3 fixed-top" data-aos="fade-right" src="../img/logoblack.png" alt="">
           </div>
         <div class="container-fluid">
           <div class="navbar-wrapper">

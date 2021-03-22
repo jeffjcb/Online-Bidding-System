@@ -3,7 +3,7 @@
 
  $results = $conn->query("SELECT * FROM categories");?>
 
-<div class="container">
+<div class="content">
 
     <div class="row" style="margin-bottom:5rem;">
     </div>

@@ -29,6 +29,10 @@
     <script src="node_modules/black-dashboard/assets/demo/demo.js"></script>
     
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
     <script>
 $(document).ready( function () {
     $('#myTtable').DataTable();

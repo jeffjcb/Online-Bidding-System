@@ -1,22 +1,22 @@
 <?php
 //  delete
 include('../db_connect.php');
-
+if (isset($_GET['delete'])){
 try {
-
-    if (isset($_GET['delete'])){
         $delete = $_GET['delete'];
         $sql = "DELETE FROM users WHERE id = $delete";
         if ($conn->query($sql) === TRUE) {
             header('Location:../users.php?success=2');
           }
   }
-}
+
   //catch exception
   catch(Exception $e) {
     header('Location:../users.php?failure=2');
   }
+}
 
+if (isset($_POST['save'])){
 try{
 // get post data
 $name = $_POST['name'];
@@ -41,5 +41,6 @@ header('Location:../users.php?failure=1');
 }}
 catch(Exception $e) {
   header('Location:../users.php?failure=3');
+}
 }
 ?>

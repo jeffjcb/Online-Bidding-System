@@ -57,6 +57,12 @@ session_destroy();
                         Account created <b>successfully</b>.
                         </div>
                         <?php }}?></div>
+                        <?php 
+                        if(isset($_GET['invalid'])){ if($_GET['invalid']==1){?>
+                        <div class="alert alert-danger a1" role="alert">
+                        <b>Invalid Username and Password. Please Try Again</b>.
+                        </div>
+                        <?php }}?></div>
       <div class="row mb-5"></div>
       <div class="row">
         <div class="col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">

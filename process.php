@@ -27,11 +27,11 @@ if(isset($rw['username'], $rw['password'])){
 // if not
     else{
         // $_SESSION['loggedin']=false;
-        header('Location:login.php');
+        header('Location:login.php?invalid=1');
     }
 }else{
     // $_SESSION['loggedin']=false;
-    header('Location:login.php');
+    header('Location:login.php?invalid=1');
 }
 }
 else{
